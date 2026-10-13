@@ -5,4 +5,154 @@
     /* убрать возможность выделения */
     /* user-select: none; */
 
+    font-family: "Roboto ";
 }
+
+@font-face {
+    font-family: "Roboto ";
+    src: url("/assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+
+.workSpace {
+    max-width: 1920px;
+    height: 100vh;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    margin: 11px 50px 11px 24px;
+
+    .leftNav {
+        display: flex;
+        gap: 40px;
+        align-items: center;
+
+        img {
+            width: 94px;
+            height: 34px;
+        }
+    }
+
+    .searchBar {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        max-width: 700px;
+        height: 42px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+
+        /* font-family: Roboto; */
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+    }
+
+    .searchField,
+    .locationField {
+        width: 300px;
+        /* height: 42px; */
+        display: flex;
+        align-items: center;
+        min-width: 0;
+        flex: 1;
+        height: 100%;
+    }
+
+
+    .searchBar input {
+        width: 100%;
+        min-width: 0;
+        padding: 16px;
+        border: none;
+        outline: none;
+        font: inherit;
+    }
+
+    .searchBar button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        width: 56px;
+        height: 56px;
+        border: none;
+        background-color: #f04444;
+        color: white;
+        cursor: pointer;
+    }
+
+    .searchBar button span {
+        font-size: 28px;
+    }
+
+
+    .searchField {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+        border-right: 1px solid #ddd;
+    }
+
+    .searchIcon {
+        flex-shrink: 0;
+        margin-left: 16px;
+        color: #777;
+        font-size: 22px;
+    }
+
+    .searchField input {
+        flex: 1;
+        min-width: 0;
+        /* padding: 16px 12px; */
+        /* border: none;
+        outline: none;
+        font: inherit; */
+    }
+
+    .btnCont {
+
+
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+
+
+        display: flex;
+        align-items: center;
+        gap: 22px;
+
+        button {
+            border: 0px;
+            background-color: white;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+
+
+        }
+
+        .btnSingUp {
+            width: 84px;
+            height: 36px;
+            background-color: #00798A;
+            border-radius: 8px;
+            color: white;
+        }
+
+    }
+
+}
+
+/* ******************************************************************************* */
