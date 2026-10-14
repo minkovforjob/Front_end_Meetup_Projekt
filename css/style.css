@@ -5,7 +5,14 @@
     /* убрать возможность выделения */
     /* user-select: none; */
 
+
+}
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
     font-family: "Roboto ";
+    /* position: relative; */
 }
 
 @font-face {
@@ -14,34 +21,34 @@
 }
 
 
-.workSpace {
-    max-width: 1920px;
-    height: 100vh;
+.main {
+
+    /* height: 100vh; */
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 1px solid red;
 }
 
 .navbar {
+
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 40px;
+
 
     margin: 11px 50px 11px 24px;
 
-    .leftNav {
-        display: flex;
-        gap: 40px;
-        align-items: center;
-
-        img {
-            width: 94px;
-            height: 34px;
-        }
+    img {
+        width: 94px;
+        height: 34px;
     }
 
     .searchBar {
         display: flex;
         align-items: center;
-        width: 100%;
-        max-width: 700px;
+        /* width: 100%; */
+        /* max-width: 700px; */
         height: 42px;
         border: 1px solid #ddd;
         border-radius: 12px;
@@ -51,41 +58,63 @@
         font-weight: 400;
         font-style: Regular;
         font-size: 16px;
+
+        input {
+            /* width: 100%; */
+            width: 260px;
+            min-width: 0;
+            padding-left: 16px;
+            border: none;
+            /* // убрать внешнюю обводку элемента  */
+            outline: none;
+            font: inherit;
+
+        }
+
+        /* ?????????????????? */
+        input:focus {
+            outline: 2px solid #00798A;
+            outline-offset: 2px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border: none;
+            background-color: #f04444;
+            color: white;
+            cursor: pointer;
+        }
     }
 
     .searchField,
     .locationField {
+        display: flex;
+        align-items: center;
+    }
+
+    .searchField {
+        /* не сжиматься, не расти, его размеры */
+        flex: 0 0 300px;
         width: 300px;
-        /* height: 42px; */
-        display: flex;
-        align-items: center;
-        min-width: 0;
-        flex: 1;
-        height: 100%;
+
+    }
+
+    .locationField {
+        /* не сжиматься, не расти, его размеры */
+        flex: 0 0 260px;
+        width: 260px;
+
     }
 
 
-    .searchBar input {
-        width: 100%;
-        min-width: 0;
-        padding: 16px;
-        border: none;
-        outline: none;
-        font: inherit;
-    }
 
-    .searchBar button {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        width: 56px;
-        height: 56px;
-        border: none;
-        background-color: #f04444;
-        color: white;
-        cursor: pointer;
-    }
+
+
 
     .searchBar button span {
         font-size: 28px;
@@ -118,11 +147,9 @@
 
     .btnCont {
 
-
         font-weight: 400;
         font-style: Regular;
         font-size: 16px;
-
 
         display: flex;
         align-items: center;
@@ -140,7 +167,14 @@
             justify-content: center;
             gap: 4px;
 
+        }
 
+        .btnEnglish {
+            width: 74px;
+        }
+
+        .btnLogin {
+            width: 42px;
         }
 
         .btnSingUp {
@@ -153,6 +187,80 @@
 
     }
 
+
+
+    .btnCont:last-child {
+        /* margin-left: auto; 2 варианта для этого результата*/
+        margin-inline-start: auto
+    }
+}
+
+
+/*  Adaptive  for navbar*/
+@media screen and (max-width: 1024px) {
+    .navbar {
+        margin-right: 8px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 16px;
+    }
+
+    .searchBar {
+        order: 1;
+        /* flex: 0 0 100%; */
+        max-width: 100%;
+        margin-inline: auto;
+    }
+}
+
+/*  Adaptive */
+@media screen and (max-width: 800px) {
+    .navbar .locationField {
+        display: none;
+    }
 }
 
 /* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+
+.peoplePlatform {
+    padding-bottom: 95px;
+    padding-top: 95px;
+    display: flex;
+    gap: 46px;
+
+    h2 {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    p {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 24px;
+
+    }
+
+    button {
+        width: 126px;
+        height: 40px;
+        background-color: #00798A;
+        border-radius: 8px;
+        color: white;
+    }
+
+    img {
+        width: 380px;
+        height: 270px;
+    }
+}
+
+.flexSetting {
+    flex: 1;
+}
