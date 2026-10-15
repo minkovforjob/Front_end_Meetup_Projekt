@@ -29,6 +29,36 @@ body {
     border: 1px solid red;
 }
 
+@media screen and (max-width: 1024px) {
+    .main {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+.title3 {
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.title3InfoLink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #00798A;
+    /* убрать подчеркивание */
+    text-decoration: none;
+
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
 .navbar {
 
     display: flex;
@@ -224,7 +254,8 @@ body {
 /* ******************************************************************************* */
 /* ******************************************************************************* */
 
-.peoplePlatform {
+.sectionPeoplePlatform {
+    border: 1px solid rgb(61, 121, 54);
     padding-bottom: 95px;
     padding-top: 95px;
     display: flex;
@@ -256,11 +287,237 @@ body {
     }
 
     img {
-        width: 380px;
-        height: 270px;
+        max-width: 380px;
+        max-height: 270px;
     }
 }
 
 .flexSetting {
     flex: 1;
+}
+
+@media screen and (max-width: 1024px) {
+    .sectionPeoplePlatform {
+        padding-top: 30px;
+        padding-bottom: 0px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+            margin-top: 20px;
+        }
+
+        /* расположить картинку посередине */
+        .imageCont img {
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .sectionPeoplePlatform {
+        img {
+            width: 216px;
+            height: auto;
+            /* height: 154px; */
+            /* margin: 0 auto; */
+        }
+    }
+}
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+.sectionEventsNear {
+    .firstLine {
+        margin-top: 24px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .title3Info {
+        width: 240px;
+        height: 44px;
+
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 20px;
+
+        background-color: #F3F9F9;
+        border-radius: 8px;
+
+        span {
+            color: #00798A;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 24px;
+        }
+
+        img {
+            width: 22px;
+            height: 22px;
+        }
+
+    }
+
+    .title3InfoLink:last-child {
+        /* margin-left: auto; 2 варианта для этого результата*/
+        margin-inline-start: auto
+    }
+
+    .eventsNear {
+        border: 1px solid rgb(120, 50, 143);
+        margin-top: 24px;
+
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(272px, 272px));
+        /* grid-template-rows: auto; */
+        grid-template-rows: repeat(auto-fill, 400px);
+        /* между колонками */
+        column-gap: 20px;
+        justify-content: space-between;
+        /* column-gap: clamp(10px, 2vw, 40px); */
+        /* между строками */
+        row-gap: 36px;
+
+
+        .eventsNearGr1 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .iconGrid {
+            width: 20px;
+            height: 20px;
+        }
+
+        .linkImg {
+            width: 272px;
+            height: 153px;
+        }
+
+        .category {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #707070;
+        }
+
+        .data {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .ticketIcon {
+            margin-left: 10px;
+        }
+
+        .dataGrid {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ticketGrid {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+    }
+}
+
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+.sectionUpcomingOnlineEvents {
+    .firstLine {
+        margin-top: 24px;
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .title3InfoLink:last-child {
+        /* margin-left: auto; 2 варианта для этого результата*/
+        margin-inline-start: auto
+    }
+
+    .upcomingOnlineEvents {
+        border: 1px solid rgb(120, 50, 143);
+        margin-top: 24px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(272px, 272px));
+        grid-template-rows: repeat(fill, 400px);
+        /* между колонками */
+        column-gap: 20px;
+        justify-content: space-between;
+        /* между строками */
+        row-gap: 36px;
+
+
+
+
+    }
+}
+
+
+
+.sectionJoinMeetup {
+    background-color: #F7FBFB;
+    border: 1px solid rgb(61, 121, 54);
+    padding-bottom: 95px;
+    padding-top: 95px;
+    display: flex;
+    gap: 46px;
+
+    h2 {
+        font-weight: 700;
+        font-style: Bold;
+        font-size: 42px;
+        line-height: 52px;
+    }
+
+    p {
+        margin-top: 24px;
+        margin-bottom: 24px;
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+        line-height: 24px;
+
+    }
+
+    button {
+        width: 126px;
+        height: 40px;
+        background-color: #E32359;
+        border-radius: 8px;
+        color: white;
+    }
+
+    img {
+        max-width: 380px;
+        max-height: 270px;
+    }
 }
