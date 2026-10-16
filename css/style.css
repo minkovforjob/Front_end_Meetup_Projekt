@@ -59,6 +59,19 @@ h4 {
     line-height: 24px;
 }
 
+@media screen and (max-width: 480px) {
+    .title3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    h4 {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+
 .navbar {
 
     display: flex;
@@ -393,7 +406,27 @@ h4 {
             display: flex;
             flex-direction: column;
             gap: 10px;
+
         }
+
+        .eventsNearText {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dataGrid {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ticketGrid {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
 
         .iconGrid {
             width: 20px;
@@ -430,57 +463,132 @@ h4 {
             margin-left: 10px;
         }
 
-        .dataGrid {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
 
-        .ticketGrid {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
     }
 }
 
 @media screen and (max-width: 1024px) {
     .sectionEventsNear {
-        .title3 {
-            font-weight: 600;
-            font-style: SemiBold;
-            font-size: 20px;
-            line-height: 24px;
-        }
 
         .title3InfoLink {
             display: none;
         }
 
-
         .eventsNear {
             border: 1px solid rgb(120, 50, 143);
             margin-top: 24px;
 
-
             display: grid;
-            grid-template-columns: repeat(1, auto);
+            grid-template-columns: 1fr;
             grid-template-rows: auto;
-            /* grid-template-rows: repeat(auto-fill, 400px); */
-
-            /* column-gap: clamp(10px, 2vw, 40px); */
+            justify-content: stretch;
             /* между строками */
-            row-gap: 36px;
+            row-gap: 16px;
+
+            .eventsNearGr1 {
+                padding: 10px;
+                border-top: 1px solid #D9D9D9;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .dataGrid {
+                order: -1;
+
+            }
+
+            .category {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
         }
 
-        .eventsNearGr1 {
-            display: flex;
-            flex-direction: row;
-            gap: 10px;
-        }
 
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    .sectionEventsNear {
+        .title3Info {
+            width: 164px;
+            height: 30px;
+
+
+            /* gap: 20px; */
+            border-radius: 6px;
+
+            span {
+                font-size: 14px;
+                line-height: 16px;
+            }
+
+            img {
+                width: 16px;
+                height: 16px;
+            }
+
+        }
+
+        .eventsNear {
+            .linkImg {
+                width: 200px;
+                height: auto;
+            }
+
+            .category {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            .data {
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            /* sdfslkjflskj */
+            span {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sectionEventsNear {
+        .eventsNear {
+            .linkImg {
+                width: 100px;
+                height: auto;
+            }
+
+
+            .category {
+                font-weight: 400;
+                font-size: 8px;
+                line-height: 12px;
+            }
+
+            .data {
+                font-size: 8px;
+                line-height: 12px;
+            }
+
+            /* sdfslkjflskj */
+            span {
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 14px;
+            }
+        }
+    }
+}
+
+
 
 /* ******************************************************************************* */
 /* ******************************************************************************* */
