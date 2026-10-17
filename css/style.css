@@ -597,35 +597,194 @@ h4 {
     .firstLine {
         margin-top: 24px;
         display: flex;
-        justify-content: start;
+        justify-content: space-between;
         align-items: center;
         gap: 18px;
     }
 
-    .title3InfoLink:last-child {
-        /* margin-left: auto; 2 варианта для этого результата*/
-        margin-inline-start: auto
-    }
+
 
     .upcomingOnlineEvents {
         border: 1px solid rgb(120, 50, 143);
         margin-top: 24px;
 
+
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(272px, 272px));
-        grid-template-rows: repeat(fill, 400px);
+        /* grid-template-rows: auto; */
+        grid-template-rows: repeat(auto-fill, 400px);
         /* между колонками */
         column-gap: 20px;
         justify-content: space-between;
+        /* column-gap: clamp(10px, 2vw, 40px); */
         /* между строками */
         row-gap: 36px;
 
 
+        .upcomingOnlineEventsGr1 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+        }
+
+        .upcomingOnlineEventsText {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .dataGrid {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .ticketGrid {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+
+        .iconGrid {
+            width: 20px;
+            height: 20px;
+        }
+
+        .linkImg {
+            width: 272px;
+            height: 153px;
+        }
+
+        .category {
+            margin-top: 10px;
+            margin-bottom: 10px;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #707070;
+        }
+
+        .data {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        span {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+        }
+
+        .ticketIcon {
+            margin-left: 10px;
+        }
 
 
     }
 }
 
+
+@media screen and (max-width: 1024px) {
+    .sectionUpcomingOnlineEvents {
+
+
+        .upcomingOnlineEvents {
+            border: 1px solid rgb(120, 50, 143);
+            margin-top: 24px;
+
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: auto;
+            justify-content: stretch;
+            /* между строками */
+            row-gap: 16px;
+
+            .upcomingOnlineEventsGr1 {
+                padding: 10px;
+                border-top: 1px solid #D9D9D9;
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .dataGrid {
+                order: -1;
+
+            }
+
+            .category {
+                margin-top: 0px;
+                margin-bottom: 0px;
+            }
+        }
+
+
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .sectionUpcomingOnlineEvents {
+
+        .upcomingOnlineEvents {
+            .linkImg {
+                width: 200px;
+                height: auto;
+            }
+
+            .category {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            .data {
+                font-size: 12px;
+                line-height: 14px;
+            }
+
+            /* sdfslkjflskj */
+            span {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 18px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .sectionUpcomingOnlineEvents {
+        .upcomingOnlineEvents {
+            .linkImg {
+                width: 100px;
+                height: auto;
+            }
+
+
+            .category {
+                font-weight: 400;
+                font-size: 8px;
+                line-height: 12px;
+            }
+
+            .data {
+                font-size: 8px;
+                line-height: 12px;
+            }
+
+            /* sdfslkjflskj */
+            span {
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 14px;
+            }
+        }
+    }
+}
 
 
 .sectionJoinMeetup {
