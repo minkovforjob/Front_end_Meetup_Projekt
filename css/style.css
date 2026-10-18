@@ -933,3 +933,54 @@ h4 {
         }
     }
 }
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+.sectionTopCategories {
+    margin-top: 64px;
+
+    .topCategories {
+        border: 1px solid rgb(120, 50, 143);
+        margin-top: 24px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 135px);
+        grid-auto-rows: 112px;
+
+        /* между колонками */
+        column-gap: 16px;
+        justify-content: space-between;
+        /* между строками */
+        row-gap: 16px;
+
+        .TopCategoriesGr1 {
+            /* width: 135px;
+            height: 112px; */
+            border-radius: 8px;
+            padding-top: 22px;
+            background-color: #F7FBFB;
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            gap: 6px;
+
+        }
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        .text {
+
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+
+
+        }
+    }
+}
