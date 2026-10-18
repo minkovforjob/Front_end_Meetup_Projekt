@@ -143,6 +143,7 @@ h4 {
     .locationField {
         display: flex;
         align-items: center;
+
     }
 
     .searchField {
@@ -1093,3 +1094,109 @@ h4 {
 /* ******************************************************************************* */
 /* ******************************************************************************* */
 /* ******************************************************************************* */
+
+.sectionHowMeetup {
+    margin-top: 64px;
+
+    .howMeetup {
+        border: 1px solid rgb(15, 215, 88);
+        margin-top: 28px;
+
+        display: flex;
+        justify-content: space-between;
+        gap: 32px;
+
+    }
+
+    .howMeetupGr1 {
+        flex: 1;
+        min-width: 0;
+
+        padding: 32px 24px 24px 24px;
+        background-color: #F7FBFB;
+        border-radius: 8px;
+
+        display: flex;
+        gap: 24px;
+    }
+
+    img {
+        width: 41px;
+        height: 41px;
+    }
+
+    .contInfo {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .title {
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    .text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .link a {
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        color: #00798A;
+        text-decoration: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sectionHowMeetup {
+        margin-top: 48px;
+
+        .howMeetup {
+
+            margin-top: 28px;
+            flex-direction: column;
+            gap: 12px;
+
+        }
+
+        .howMeetupGr1 {
+            padding: 20px 15px 15px 15px;
+
+            border-radius: 8px;
+            display: flex;
+            gap: 16px;
+
+        }
+
+        img {
+            width: 25px;
+            height: 25px;
+        }
+
+        .contInfo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .title {
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .text {
+            font-size: 10px;
+            line-height: 14px;
+        }
+
+        .link a {
+            font-size: 10px;
+            line-height: 14px;
+        }
+    }
+}
