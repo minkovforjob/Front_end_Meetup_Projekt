@@ -59,6 +59,8 @@ h4 {
     line-height: 24px;
 }
 
+
+
 @media screen and (max-width: 480px) {
     .title3 {
         font-size: 20px;
@@ -71,6 +73,9 @@ h4 {
     }
 }
 
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
 
 .navbar {
 
@@ -274,6 +279,7 @@ h4 {
     display: flex;
     gap: 46px;
 
+
     h2 {
         font-weight: 700;
         font-style: Bold;
@@ -297,17 +303,28 @@ h4 {
         background-color: #00798A;
         border-radius: 8px;
         color: white;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .imageCont {
+        display: flex;
+        justify-content: center;
     }
 
     img {
         max-width: 380px;
         max-height: 270px;
     }
+
+    /* занимать доступное свободное пространство внутри flex-контейнера */
+    .flexSetting {
+        flex: 1;
+    }
 }
 
-.flexSetting {
-    flex: 1;
-}
+
 
 @media screen and (max-width: 1024px) {
     .sectionPeoplePlatform {
@@ -323,10 +340,10 @@ h4 {
         }
 
         /* расположить картинку посередине */
-        .imageCont img {
+        /* .imageCont img {
             display: block;
             margin: 0 auto;
-        }
+        } */
     }
 }
 
@@ -345,6 +362,7 @@ h4 {
 /* ******************************************************************************* */
 /* ******************************************************************************* */
 /* ******************************************************************************* */
+
 .sectionEventsNear {
     .firstLine {
         margin-top: 24px;
@@ -593,6 +611,7 @@ h4 {
 /* ******************************************************************************* */
 /* ******************************************************************************* */
 /* ******************************************************************************* */
+
 .sectionUpcomingOnlineEvents {
     .firstLine {
         margin-top: 24px;
@@ -786,25 +805,56 @@ h4 {
     }
 }
 
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
 
 .sectionJoinMeetup {
     background-color: #F7FBFB;
     border: 1px solid rgb(61, 121, 54);
-    padding-bottom: 95px;
-    padding-top: 95px;
-    display: flex;
-    gap: 46px;
 
-    h2 {
-        font-weight: 700;
-        font-style: Bold;
-        font-size: 42px;
-        line-height: 52px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "title image"
+        "text image";
+    align-items: center;
+
+    /* gap: 46px; */
+    .title {
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        align-items: end;
     }
 
+    h5 {
+        margin-bottom: 0px;
+        grid-area: title;
+        font-weight: 600;
+        font-style: Bold;
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .textCont {
+        grid-area: text;
+        align-self: start;
+    }
+
+    .imageCont {
+        grid-area: image;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
     p {
-        margin-top: 24px;
-        margin-bottom: 24px;
+        /* margin-top: 16px; */
+        margin-bottom: 16px;
         font-weight: 400;
         font-style: Regular;
         font-size: 16px;
@@ -813,15 +863,73 @@ h4 {
     }
 
     button {
-        width: 126px;
+        width: 192px;
         height: 40px;
         background-color: #E32359;
         border-radius: 8px;
         color: white;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
     }
 
+
     img {
-        max-width: 380px;
-        max-height: 270px;
+        display: block;
+        width: 342px;
+        max-width: 100%;
+        height: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 1024px) {
+    .sectionJoinMeetup {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "title"
+            "image"
+            "text";
+        gap: 0px;
+        padding: 16px 0 16px;
+
+        h5 {
+            font-size: 20px;
+            align-self: auto;
+        }
+
+        p {
+            margin-top: 6px;
+            font-size: 12px;
+        }
+
+        .textCont {
+            align-self: auto;
+        }
+
+        button {
+            display: block;
+            margin: 0 auto;
+        }
+
+        img {
+            margin: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    .sectionJoinMeetup {
+        img {
+            width: 238px;
+            height: auto;
+        }
     }
 }
