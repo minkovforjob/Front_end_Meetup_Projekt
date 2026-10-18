@@ -984,3 +984,112 @@ h4 {
         }
     }
 }
+
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+.sectionPopularCities {
+    margin-top: 64px;
+
+    .text {
+        margin-top: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+
+    }
+
+    .popularCities {
+        border: 1px solid rgb(15, 215, 88);
+        margin-top: 28px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 205px);
+        grid-auto-rows: max-content;
+
+        /* между колонками */
+        column-gap: 16px;
+        justify-content: space-between;
+        /* между строками */
+        row-gap: 16px;
+
+        .popularCitiesGr1 {
+
+
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: center;
+            gap: 24px;
+
+            img {
+                width: 205px;
+                height: 205px;
+            }
+
+            .data {
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 28px;
+                text-align: center;
+            }
+        }
+
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sectionPopularCities {
+        margin-top: 48px;
+
+        .popularCities {
+            margin-top: 10px;
+
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 154px);
+            grid-auto-rows: max-content;
+
+
+            .popularCitiesGr1 {
+
+                gap: 18px;
+
+                img {
+                    width: 154px;
+                    height: 154px;
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .sectionPopularCities {
+        .text {
+            margin-top: 16px;
+            font-size: 12px;
+            line-height: 24px;
+        }
+
+        .popularCities {
+
+            .popularCitiesGr1 {
+
+                .data {
+                    font-size: 16px;
+                    line-height: 20px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
