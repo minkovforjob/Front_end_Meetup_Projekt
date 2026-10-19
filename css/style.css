@@ -900,7 +900,7 @@ h4 {
         gap: 0px;
         padding: 16px 0 16px;
 
-        h5 {
+        /* h5 {
             font-size: 20px;
             align-self: auto;
         }
@@ -908,7 +908,7 @@ h4 {
         p {
             margin-top: 6px;
             font-size: 12px;
-        }
+        } */
 
         .textCont {
             align-self: auto;
@@ -928,6 +928,17 @@ h4 {
 @media screen and (max-width: 768px) {
 
     .sectionJoinMeetup {
+
+        h5 {
+            font-size: 20px;
+            align-self: auto;
+        }
+
+        p {
+            margin-top: 6px;
+            font-size: 12px;
+        }
+
         img {
             width: 238px;
             height: auto;
@@ -993,11 +1004,13 @@ h4 {
 .sectionPopularCities {
     margin-top: 64px;
 
+
     .text {
         margin-top: 16px;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
+        color: #707070;
 
     }
 
@@ -1197,6 +1210,288 @@ h4 {
         .link a {
             font-size: 10px;
             line-height: 14px;
+        }
+    }
+}
+
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+
+.sectionFriendships {
+    margin-top: 64px;
+    margin-bottom: 64px;
+
+    .text0 {
+        margin-top: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #707070;
+    }
+
+    .friendships {
+        border: 1px solid rgb(222, 36, 173);
+        margin-top: 28px;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fill, 376px);
+        grid-auto-rows: max-content;
+
+        /* между колонками */
+        column-gap: 32px;
+        justify-content: space-between;
+        /* между строками */
+        row-gap: 32px;
+
+        /* display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 32px; */
+
+        .friendshipsGr1 {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        img {
+            width: 376px;
+            height: auto;
+        }
+
+        h4 {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 28px;
+
+        }
+
+        .text {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #707070;
+
+        }
+
+        .link a {
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 24px;
+            color: #00798A;
+            text-decoration: none;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .sectionFriendships {
+        margin-top: 48px;
+
+        .friendships {}
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .sectionFriendships {
+
+        .text0 {
+            display: none;
+        }
+
+        .friendships {
+            margin-top: 28px;
+
+            grid-template-columns: repeat(auto-fill, 360px);
+
+            .friendshipsGr1 {
+
+                gap: 16px;
+            }
+
+            img {
+                width: 360px;
+                height: 184px;
+            }
+
+            h4 {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .text {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 24px;
+            }
+
+            .link a {
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 24px;
+            }
+
+        }
+
+    }
+}
+
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+
+.footer0 {
+    background-color: #212121;
+    color: #C5C4C4;
+
+
+    .footer {
+        margin-left: 100px;
+        margin-right: 100px;
+        border: 1px solid rgb(239, 243, 32);
+
+        .firstLine {
+            padding-bottom: 24px;
+            padding-top: 24px;
+            display: flex;
+            gap: 30px;
+            justify-content: start;
+            align-items: center;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+
+            }
+
+            button {
+                background-color: #212121;
+                color: #C5C4C4;
+                width: 120px;
+                height: 44px;
+                border: 2px solid #C5C4C4;
+                border-radius: 6px;
+            }
+        }
+
+        .footerGrid {
+            border-top: 1px solid #C5C4C4;
+            padding-top: 24px;
+
+            display: flex;
+            justify-content: space-between;
+
+            .footerGr1 {
+                width: 30%;
+            }
+
+            h5 {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        .btnCont {
+            border: 1px solid rgb(9, 203, 83);
+            margin-top: 24px;
+            /* padding-bottom: 24px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h5 {
+                margin-bottom: 12px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .btnContent {
+                display: flex;
+                gap: 32px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .contStore {
+                padding-top: 25px;
+                padding-bottom: 25px;
+
+                display: flex;
+                gap: 12px;
+            }
+        }
+
+        .lastLine {
+            margin-top: 24px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 24px;
+
+            span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .footer0 {
+
+
+        .footer {
+            margin-left: 15px;
+            margin-right: 15px;
+
+
+
+            .lastLine {
+                .sub {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer0 {
+
+        .footer {
+
+
+            .btnCont {
+
+
+
+                .contStore {
+                    display: none;
+                }
+
+
+            }
+
+
         }
     }
 }
