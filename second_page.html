@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./css/style2.css" rel="stylesheet" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <a href="./index.html">
+            <img src="./assets/icon/logo.svg" alt="logo" class="logo" /></a>
+        <form class="searchBar">
+
+            <div class="searchField">
+                <span class="material-symbols-rounded searchIcon">
+                    search
+                </span>
+                <input type="text" placeholder="Search events" aria-label="Search events">
+            </div>
+
+            <div class="locationField">
+                <input type="text" value="Mountain View, CA" aria-label="Location">
+            </div>
+            <button type="submit" aria-label="Search">
+                <span class="material-symbols-rounded">search</span>
+            </button>
+        </form>
+        <div class="btnCont">
+            <button class="btnEnglish"><img src="./assets/icon/Planet.svg" alt="Planet">English</button>
+            <button class="btnLogin">Log in</button>
+            <button class="btnSingUp">Sign up</button>
+        </div>
+    </div>
+
+
+    <div class="main">
+        <div class="contFilter">
+            <div class="firstLine">
+                <div class="title3"><span>Events near New York, NY</span></div>
+                <a class="title3InfoLink" href="">Events</a>
+            </div>
+            <div class="filters">
+
+                <div class="filter">
+                    <button class="filterButton" type="button">
+                        Category
+                        <span>⌄</span>
+                    </button>
+
+                    <ul class="filterList">
+                        <li><label><input type="radio" name="category" value="Social Activities"> Social
+                                Activities</label></li>
+                        <li><label><input type="radio" name="category" value="Hobbies and Passions"> Hobbies and
+                                Passions</label></li>
+                        <li><label><input type="radio" name="category" value="Health and Wellbeing"> Health and
+                                Wellbeing</label></li>
+                        <li><label><input type="radio" name="category" value="Business"> Business</label></li>
+                        <li><label><input type="radio" name="category" value="Technology"> Technology</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter">
+                    <button class="filterButton" type="button">
+                        Distance
+                        <span>⌄</span>
+                    </button>
+
+                    <ul class="filterList">
+                        <li><label><input type="radio" name="distance" value="5"> 5 km</label></li>
+                        <li><label><input type="radio" name="distance" value="10"> 10 km</label></li>
+                        <li><label><input type="radio" name="distance" value="15"> 15 km</label></li>
+                        <li><label><input type="radio" name="distance" value="25"> 25 km</label></li>
+                        <li><label><input type="radio" name="distance" value="50"> 50 km</label></li>
+                        <li><label><input type="radio" name="distance" value="75"> 75 km</label></li>
+                        <li><label><input type="radio" name="distance" value="100"> 100 km</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter">
+                    <button class="filterButton" type="button">
+                        Type
+                        <span>⌄</span>
+                    </button>
+
+                    <ul class="filterList">
+                        <li><label><input type="radio" name="type" value="Online"> Online</label></li>
+                        <li><label><input type="radio" name="type" value="Offline"> Offline</label></li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+            <div class="eventsFilltered">
+                <div class="eventsFillteredGr1">
+                    <div class="eventsFillteredImg"> <img class="linkImg" src="./assets/img/Link1.png" alt=""></div>
+
+                    <div class="eventsFillteredText">
+                        <p class="data">Mon, Mar 18 · 7:00 PM PDT</p>
+                        <h4>Day Trading Idea and Strategy</h4>
+                        <p class="category">Business (5 km)</p>
+                        <p class="attendees">1 going</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- *********************************************** -->
+        <div class="contMap"></div>
+    </div>
+
+
+    <div class="footer0">
+        <div class="footer">
+            <div class="firstLine">
+                <span>Create your own Meetup group.</span>
+                <button>Get Started</button>
+
+            </div>
+            <div class="footerGrid">
+                <div class="footerGr1">
+                    <h5>Your Account</h5>
+                    <p>Sign up</p>
+                    <p>Log in</p>
+                    <p>Help</p>
+                    <p>Become an Affiliate</p>
+                </div>
+                <div class="footerGr1">
+                    <h5>Discover</h5>
+                    <p>Groups</p>
+                    <p>Calendar</p>
+                    <p>Topics</p>
+                    <p>Cities</p>
+                    <p>Online Events</p>
+                    <p>Local Guides</p>
+                    <p>Make Friends</p>
+                </div>
+                <div class="footerGr1">
+                    <h5>Meetup</h5>
+                    <p>About</p>
+                    <p>Blog</p>
+                    <p>Meetup Pro</p>
+                    <p>Careers</p>
+                    <p>Apps</p>
+                    <p>Podcast</p>
+                </div>
+            </div>
+
+            <div class="btnCont">
+                <div>
+                    <h5>Follow us</h5>
+                    <div class="btnContent">
+                        <img src="./assets/icon/V_fbook.svg" alt="Facebook">
+                        <img src="./assets/icon/v_Twitter.svg" alt="Twitter">
+                        <img src="./assets/icon/V_youtube.svg" alt="youtube">
+                        <img src="./assets/icon/V_insta.svg" alt="insta">
+                        <img src="./assets/icon/V_tiktok.svg" alt="tiktok">
+                    </div>
+                </div>
+
+                <div class="contStore">
+                    <img src="./assets/img/download_en-US.png" alt="GooglePlay">
+                    <img src="./assets/img/download_en-US2.png" alt="AppStore">
+                </div>
+            </div>
+            <div class="lastLine">
+                <span>© 2024 Meetup</span>
+                <span class="sub">Terms of Service</span>
+                <span class="sub">Privacy Policy</span>
+                <span class="sub">Do Not Sell or Share My Personal Data</span>
+                <span class="sub">Cookie Policy</span>
+                <span class="sub">Help</span>
+            </div>
+
+        </div>
+    </div>
+</body>
+<script src="./scripts/script.js"></script>
+
+</html>

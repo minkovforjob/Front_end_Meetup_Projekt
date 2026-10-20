@@ -1,0 +1,596 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    /* убрать возможность выделения */
+    /* user-select: none; */
+
+
+}
+
+body {
+    max-width: 1920px;
+    margin: 0 auto;
+    font-family: "Roboto";
+    /* position: relative; */
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url("../assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+}
+
+
+.main {
+
+    /* height: 100vh; */
+    margin-left: 100px;
+    margin-right: 100px;
+    border: 1px solid red;
+}
+
+@media screen and (max-width: 1024px) {
+    .main {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+
+.title3 {
+    font-weight: 600;
+    font-style: SemiBold;
+    font-size: 28px;
+    line-height: 36px;
+}
+
+.title3InfoLink {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: #00798A;
+    /* убрать подчеркивание */
+    text-decoration: none;
+
+}
+
+h4 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+
+
+@media screen and (max-width: 480px) {
+    .title3 {
+        font-size: 20px;
+        line-height: 24px;
+    }
+
+    h4 {
+        font-size: 10px;
+        line-height: 14px;
+    }
+}
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+
+.navbar {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 40px;
+
+
+    margin: 11px 50px 11px 24px;
+
+    img {
+        width: 94px;
+        height: 34px;
+    }
+
+    .searchBar {
+        display: flex;
+        align-items: center;
+        /* width: 100%; */
+        /* max-width: 700px; */
+        height: 42px;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        overflow: hidden;
+
+        /* font-family: Roboto; */
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+
+        input {
+            /* width: 100%; */
+            width: 260px;
+            min-width: 0;
+            padding-left: 16px;
+            border: none;
+            /* // убрать внешнюю обводку элемента  */
+            outline: none;
+            font: inherit;
+
+        }
+
+        /* ?????????????????? */
+        input:focus {
+            outline: 2px solid #00798A;
+            outline-offset: 2px;
+        }
+
+        button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            width: 42px;
+            height: 42px;
+            border: none;
+            background-color: #f04444;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+    .searchField,
+    .locationField {
+        display: flex;
+        align-items: center;
+
+    }
+
+    .searchField {
+        /* не сжиматься, не расти, его размеры */
+        flex: 0 0 300px;
+        width: 300px;
+
+    }
+
+    .locationField {
+        /* не сжиматься, не расти, его размеры */
+        flex: 0 0 260px;
+        width: 260px;
+
+    }
+
+    .searchBar button span {
+        font-size: 28px;
+    }
+
+
+    .searchField {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        min-width: 0;
+        border-right: 1px solid #ddd;
+    }
+
+    .searchIcon {
+        flex-shrink: 0;
+        margin-left: 16px;
+        color: #777;
+        font-size: 22px;
+    }
+
+    .searchField input {
+        flex: 1;
+        min-width: 0;
+        /* padding: 16px 12px; */
+        /* border: none;
+        outline: none;
+        font: inherit; */
+    }
+
+    .btnCont {
+
+        font-weight: 400;
+        font-style: Regular;
+        font-size: 16px;
+
+        display: flex;
+        align-items: center;
+        gap: 22px;
+
+        button {
+            border: 0px;
+            background-color: white;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+
+        }
+
+        .btnEnglish {
+            width: 74px;
+        }
+
+        .btnLogin {
+            width: 42px;
+        }
+
+        .btnSingUp {
+            width: 84px;
+            height: 36px;
+            background-color: #00798A;
+            border-radius: 8px;
+            color: white;
+        }
+
+    }
+
+
+
+    .btnCont:last-child {
+        /* margin-left: auto; 2 варианта для этого результата*/
+        margin-inline-start: auto
+    }
+}
+
+
+/*  Adaptive  for navbar*/
+@media screen and (max-width: 1024px) {
+    .navbar {
+        margin-right: 8px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 16px;
+    }
+
+    .searchBar {
+        order: 1;
+        /* flex: 0 0 100%; */
+        max-width: 100%;
+        margin-inline: auto;
+    }
+}
+
+/*  Adaptive */
+@media screen and (max-width: 800px) {
+    .navbar .locationField {
+        display: none;
+    }
+}
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+
+.main {
+    .contFilter {
+        margin-top: 78px;
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+
+        .filters {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .filter {
+            position: relative;
+        }
+
+        .filterButton {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+
+            padding: 10px 16px;
+            min-width: 120px;
+
+            border: none;
+            border-radius: 20px;
+            background-color: #f2f2f2;
+
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .filterButton:hover {
+            background-color: #e0eeee;
+        }
+
+
+        .filterList {
+            display: none;
+
+            position: absolute;
+            top: calc(100% + 8px);
+            left: 0;
+            z-index: 10;
+
+            min-width: 240px;
+            margin: 0;
+            padding: 6px;
+
+            /* убираем маркеры у пунктов списка */
+            list-style: none;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+        }
+
+        .filterList.open {
+            display: block;
+        }
+
+        .filterList li {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .filterList label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 10px 12px;
+            border-radius: 8px;
+
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .filterList label:hover {
+            background-color: #f3f7f7;
+        }
+
+        /* Прячем стандартные radio-кружки */
+        .filterList input[type="radio"] {
+            position: absolute;
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Выбранный пункт */
+        .filterList label:has(input:checked) {
+            background-color: #e8f5f5;
+            color: #00798a;
+            font-weight: 600;
+        }
+
+        /* Галочка справа у выбранного пункта */
+        .filterList label:has(input:checked)::after {
+            content: "✓";
+            margin-left: auto;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+    }
+
+    .eventsFilltered {
+        border: 1px solid rgb(120, 50, 143);
+        margin-top: 24px;
+
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        justify-content: stretch;
+        /* между строками */
+        row-gap: 16px;
+
+
+        .eventsFillteredGr1 {
+            padding: 10px;
+            border-top: 1px solid #707070;
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+        }
+
+        .eventsFillteredText {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .linkImg {
+            margin-bottom: 40px;
+            margin-top: 16px;
+            width: 160px;
+            height: 90px;
+        }
+
+        .data {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #707070;
+        }
+
+        .category {
+            /* margin-top: 10px;
+            margin-bottom: 10px; */
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+            color: #707070;
+        }
+
+
+
+        .attendees {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            color: #707070;
+        }
+
+    }
+
+}
+
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+/* ******************************************************************************* */
+
+.footer0 {
+    background-color: #212121;
+    color: #C5C4C4;
+
+
+    .footer {
+        margin-left: 100px;
+        margin-right: 100px;
+        border: 1px solid rgb(239, 243, 32);
+
+        .firstLine {
+            padding-bottom: 24px;
+            padding-top: 24px;
+            display: flex;
+            gap: 30px;
+            justify-content: start;
+            align-items: center;
+
+            span {
+                font-weight: 600;
+                font-size: 16px;
+                line-height: 24px;
+
+            }
+
+            button {
+                background-color: #212121;
+                color: #C5C4C4;
+                width: 120px;
+                height: 44px;
+                border: 2px solid #C5C4C4;
+                border-radius: 6px;
+            }
+        }
+
+        .footerGrid {
+            border-top: 1px solid #C5C4C4;
+            padding-top: 24px;
+
+            display: flex;
+            justify-content: space-between;
+
+            .footerGr1 {
+                width: 30%;
+            }
+
+            h5 {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            p {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+
+        .btnCont {
+            border: 1px solid rgb(9, 203, 83);
+            margin-top: 24px;
+            /* padding-bottom: 24px; */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            h5 {
+                margin-bottom: 12px;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+            }
+
+            .btnContent {
+                display: flex;
+                gap: 32px;
+
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+
+            .contStore {
+                padding-top: 25px;
+                padding-bottom: 25px;
+
+                display: flex;
+                gap: 12px;
+            }
+        }
+
+        .lastLine {
+            margin-top: 24px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 24px;
+
+            span {
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 20px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 1024px) {
+    .footer0 {
+
+
+        .footer {
+            margin-left: 15px;
+            margin-right: 15px;
+
+
+
+            .lastLine {
+                .sub {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer0 {
+
+        .footer {
+
+
+            .btnCont {
+
+
+
+                .contStore {
+                    display: none;
+                }
+
+
+            }
+
+
+        }
+    }
+}

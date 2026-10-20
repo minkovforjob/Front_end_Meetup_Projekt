@@ -11,13 +11,13 @@
 body {
     max-width: 1920px;
     margin: 0 auto;
-    font-family: "Roboto ";
+    font-family: "Roboto";
     /* position: relative; */
 }
 
 @font-face {
-    font-family: "Roboto ";
-    src: url("/assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
+    font-family: "Roboto";
+    src: url("../assets/fonts/Roboto/Roboto-VariableFont_wdth\,wght.ttf");
 }
 
 
@@ -298,12 +298,15 @@ h4 {
 
     }
 
-    button {
-        width: 126px;
-        height: 40px;
+    .btn {
+        display: inline-block;
+        padding: 8px 15px;
+        /* width: 126px;
+        height: 40px; */
         background-color: #00798A;
         border-radius: 8px;
         color: white;
+        text-decoration: none;
         font-weight: 400;
         font-size: 16px;
         line-height: 24px;
