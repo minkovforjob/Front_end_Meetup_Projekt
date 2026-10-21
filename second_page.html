@@ -49,29 +49,25 @@
 
                 <div class="filter">
                     <button class="filterButton" type="button">
-                        Category
+                        <span class="filterButtonText">Type</span>
                         <span>⌄</span>
                     </button>
 
                     <ul class="filterList">
-                        <li><label><input type="radio" name="category" value="Social Activities"> Social
-                                Activities</label></li>
-                        <li><label><input type="radio" name="category" value="Hobbies and Passions"> Hobbies and
-                                Passions</label></li>
-                        <li><label><input type="radio" name="category" value="Health and Wellbeing"> Health and
-                                Wellbeing</label></li>
-                        <li><label><input type="radio" name="category" value="Business"> Business</label></li>
-                        <li><label><input type="radio" name="category" value="Technology"> Technology</label></li>
+                        <li><label><input type="radio" name="type" value="">All</label></li>
+                        <li><label><input type="radio" name="type" value="online"> Online</label></li>
+                        <li><label><input type="radio" name="type" value="offline"> Offline</label></li>
                     </ul>
                 </div>
 
                 <div class="filter">
                     <button class="filterButton" type="button">
-                        Distance
+                        <span class="filterButtonText">Distance</span>
                         <span>⌄</span>
                     </button>
 
                     <ul class="filterList">
+                        <li><label><input type="radio" name="distance" value="">All</label></li>
                         <li><label><input type="radio" name="distance" value="5"> 5 km</label></li>
                         <li><label><input type="radio" name="distance" value="10"> 10 km</label></li>
                         <li><label><input type="radio" name="distance" value="15"> 15 km</label></li>
@@ -83,23 +79,63 @@
                 </div>
 
                 <div class="filter">
+                    <button class="filterButton  filterButtonСategory" type="button">
+                        <span class="filterButtonText">Category</span>
+                        <span>⌄</span>
+                    </button>
+
+                    <ul class="filterList filterListСategory">
+                        <li><label><input type="radio" name="category" value="">
+                                All</label></li>
+                        <li><label><input type="radio" name="category" value="Social Activities">
+                                Social Activities</label></li>
+                        <li><label><input type="radio" name="category" value="Hobbies and Passions">
+                                Hobbies and Passions</label></li>
+                        <li><label><input type="radio" name="category" value="Health and Wellbeing">
+                                Health and Wellbeing</label></li>
+                        <li><label><input type="radio" name="category" value="Business">
+                                Business</label></li>
+                        <li><label><input type="radio" name="category" value="Technology">
+                                Technology</label></li>
+                    </ul>
+                </div>
+
+                <div class="filter">
                     <button class="filterButton" type="button">
-                        Type
+                        <span class="filterButtonText">Date</span>
                         <span>⌄</span>
                     </button>
 
                     <ul class="filterList">
-                        <li><label><input type="radio" name="type" value="Online"> Online</label></li>
-                        <li><label><input type="radio" name="type" value="Offline"> Offline</label></li>
+                        <li><label><input type="radio" name="date" value="">
+                                All</label></li>
+                        <li><label><input type="radio" name="date" value="Today">
+                                Today</label></li>
+                        <li><label><input type="radio" name="date" value="Tomorrow">
+                                Tomorrow</label></li>
+                        <li><label><input type="radio" name="date" value="7 days">
+                                7 days</label></li>
+                        <li><label><input type="radio" name="date" value="30 days">
+                                30 days</label></li>
                     </ul>
                 </div>
+
 
             </div>
 
 
+            <!-- ********       Сообщение если событий при этом фильтре не существует.      ********* -->
+            <p class="noResults" hidden>
+                No events found
+            </p>
+            <!-- *********************************************** -->
+
+
             <div class="eventsFilltered">
-                <div class="eventsFillteredGr1">
-                    <div class="eventsFillteredImg"> <img class="linkImg" src="./assets/img/Link1.png" alt=""></div>
+                <!-- <div class="eventsFillteredGr1">
+                    <div class="eventsFillteredImg"> <img class="linkImg" src="./assets/img/Link1.png" alt="">
+                        <img class="badgeOnline" src="./assets/icon/Online Event.svg" alt="Online Event">
+                    </div>
 
                     <div class="eventsFillteredText">
                         <p class="data">Mon, Mar 18 · 7:00 PM PDT</p>
@@ -107,12 +143,17 @@
                         <p class="category">Business (5 km)</p>
                         <p class="attendees">1 going</p>
                     </div>
-                </div>
+                </div> -->
+
             </div>
         </div>
 
-        <!-- *********************************************** -->
-        <div class="contMap"></div>
+
+        <div class="contMap">
+
+
+
+        </div>
     </div>
 
 

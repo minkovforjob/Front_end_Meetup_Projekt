@@ -300,8 +300,12 @@ h4 {
             background-color: #f2f2f2;
 
             font-size: 14px;
-            font-weight: 600;
+            font-weight: 500;
             cursor: pointer;
+        }
+
+        .filterButtonСategory {
+            width: 210px;
         }
 
         .filterButton:hover {
@@ -317,7 +321,7 @@ h4 {
             left: 0;
             z-index: 10;
 
-            min-width: 240px;
+            width: 120px;
             margin: 0;
             padding: 6px;
 
@@ -327,6 +331,10 @@ h4 {
             border: 1px solid #ddd;
             border-radius: 12px;
             box-shadow: 0 4px 12px rgb(0 0 0 / 12%);
+        }
+
+        .filterListСategory {
+            width: 210px;
         }
 
         .filterList.open {
@@ -369,15 +377,11 @@ h4 {
             font-weight: 600;
         }
 
-        /* Галочка справа у выбранного пункта */
-        .filterList label:has(input:checked)::after {
-            content: "✓";
-            margin-left: auto;
-            font-size: 16px;
-            font-weight: 700;
-        }
+
 
     }
+
+    /* ******************************************************************************* */
 
     .eventsFilltered {
         border: 1px solid rgb(120, 50, 143);
@@ -437,8 +441,35 @@ h4 {
             color: #707070;
         }
 
+        .eventsFillteredImg {
+            position: relative;
+
+            .badgeOnline {
+                position: absolute;
+                left: 0px;
+                top: 16px;
+
+                width: 106px;
+                height: 20px;
+
+                background-image: url("../assets/icon/Online Event.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+
+        /* // filteredArr is empty => message:"Try another filters variants" */
+
     }
 
+}
+
+.noResults {
+    text-align: center;
+    padding: 30px 16px;
+    color: #2a4746;
+    font-size: 18px;
 }
 
 /* ******************************************************************************* */

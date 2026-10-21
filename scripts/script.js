@@ -70,23 +70,193 @@ const eventsStore = [
 // ******************************************************************************************
 // ******************************************************************************************
 // ******************************************************************************************
-
-
-
+const filtrCriterions = {
+    category: "",
+    type: "",
+    distance: "",
+}
+const noResults = document.querySelector(".noResults");
+console.log(noResults);
+const eventsFilltered = document.querySelector(".eventsFilltered");
 const filterButtons = document.querySelectorAll(".filterButton");
-
+const filterLists = document.querySelectorAll(".filterList");
 filterButtons.forEach(button => {
     button.addEventListener("click", () => {
         const list = button.nextElementSibling;
+        const isOpen = list.classList.contains("open");
 
-        // Закрываем остальные списки
-        document.querySelectorAll(".filterList").forEach(item => {
-            if (item !== list) {
-                item.classList.remove("open");
-            }
+        // Закрываем все списки
+        filterLists.forEach(item => {
+            item.classList.remove("open");
         });
 
-        // Открываем или закрываем текущий список
-        list.classList.toggle("open");
+        // Открываем текущий, если он был закрыт
+        if (!isOpen) {
+            list.classList.add("open");
+        }
     });
 });
+
+// Выбор значения
+document.querySelectorAll(".filterList input").forEach(input => {
+    input.addEventListener("change", (event) => {
+
+        const filterKey = input.name;//поймали key - для процедуры фильтрации
+        const filterValue = input.value;// поймали value - для процедуры фильтрации
+        // console.log(input.name + "  " + input.value);
+
+        filtrCriterions[filterKey] = filterValue;
+        console.log(filtrCriterions);
+        filterEvents();
+
+        //ищем ближайший элемент с указанным селектором, начиная с самого элемента 
+        // и поднимаясь вверх по HTML-структуре
+        const list = input.closest(".filterList");
+        const filter = input.closest(".filter");
+
+        //ищем подходящий элемент внутри указанного элемента, 
+        // спускаясь по его потомкам
+        const buttonText = filter.querySelector(".filterButtonText");
+        // console.log(buttonText0);
+        // Получаем выбранный текст
+        const label = input.closest("label");
+        const selectedText = label.textContent.trim();
+
+        // Показываем выбранное значение на кнопке
+        if (selectedText !== "All") { buttonText.textContent = selectedText; } else { buttonText.textContent = filterKey[0].toUpperCase() + filterKey.slice(1).toLowerCase() }
+
+        // Закрываем список после выбора
+        list.classList.remove("open");
+
+
+    });
+});
+// ******************************************************************************************
+// ******************************************************************************************
+// ********************************         FILTER ARR          **********************************************************
+
+// v_field = "category", v_value = "Health and Wellbeing"
+function filterEvents() {
+    // console.log("filterEvents");
+    console.log(eventsStore);
+    console.log(filtrCriterions);
+    if ((filtrCriterions.category !== "") || (filtrCriterions.type !== "") || (filtrCriterions.distance !== "")) {
+        const filtredArr = eventsStore.filter((el) => {
+            let flag1 = false; let flag2 = false; let flag3 = false;
+            if ((filtrCriterions.category === "") || (el.category === filtrCriterions.category)) { flag1 = true };
+            if ((filtrCriterions.type === "") || (el.type === filtrCriterions.type)) { flag2 = true };
+            if ((filtrCriterions.distance === "") || (el.distance <= filtrCriterions.distance)) { flag3 = true };
+
+            if (flag1 && flag2 && flag3) { return el; }
+        })
+        console.log(filtredArr);
+        render(filtredArr);
+
+    }
+    else {
+        render(eventsStore);
+    }
+
+
+}
+filterEvents();
+// filterEvents("category", "Health and Wellbeing");
+
+
+
+/* <div class="eventsFillteredGr1">
+    <div class="eventsFillteredImg"> <img class="linkImg" src="./assets/img/Link1.png" alt=""></div>
+    <div class="eventsFillteredText">
+        <p class="data">Mon, Mar 18 · 7:00 PM PDT</p>
+        <h4>Day Trading Idea and Strategy</h4>
+        <p class="category">Business (5 km)</p>
+        <p class="attendees">1 going</p>
+    </div>
+</div>
+    **************************************
+const eventsStore = [{
+    title: "All Nations - Manhattan Missions Church Bible Study",
+    description: "Manhattan Bible Study Meetup Group",
+    date: new Date(2024, 2, 14, 11),
+    image:
+        "https://plus.unsplash.com/premium_photo-1679488248784-65a638a3d3fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    type: "offline",
+    category: "Health and Wellbeing",
+    distance: 15,
+},
+]
+    ************************************************* */
+
+
+
+function render(arr) {
+    eventsFilltered.replaceChildren();
+    console.log("arr.length = " + arr.length);
+
+    if (arr.length === 0) {
+
+        noResults.hidden = false;
+    }
+    else {
+        noResults.hidden = true;
+        for (let el of arr) {
+            // console.log(el.image);
+            const eventsFillteredGr1 = document.createElement("div");
+            eventsFillteredGr1.setAttribute("class", "eventsFillteredGr1");
+            // event.dataset.id = el. ???????????????????
+
+            const eventsFillteredImg = document.createElement("div");
+            eventsFillteredImg.setAttribute("class", "eventsFillteredImg");
+            const linkImg = document.createElement("img");
+            linkImg.setAttribute("class", "linkImg");
+            linkImg.setAttribute("src", el.image);
+
+            const eventsFillteredText = document.createElement("div");
+            eventsFillteredText.setAttribute("class", "eventsFillteredText");
+
+            const data = document.createElement("p");
+            data.setAttribute("class", "data");
+            data.textContent = el.date.toLocaleString("en-US", {
+                weekday: "short",
+                month: "short",
+                day: "numeric",
+                hour: "numeric",
+                minute: "2-digit"
+            });
+            const h4 = document.createElement("h4");
+            h4.textContent = el.title
+            const category = document.createElement("p");
+            category.setAttribute("class", "category");
+            category.textContent = `${el.category} (${el.distance} km)`;
+
+            const attendees = document.createElement("p");
+            attendees.setAttribute("class", "attendees");
+            attendees.textContent = (el.attendees || 0) + " attendees";
+
+
+
+            eventsFillteredImg.appendChild(linkImg);
+            if (el.type === "online") {
+                const badgeOnline = document.createElement("img")
+                badgeOnline.setAttribute("class", "badgeOnline");
+                // badgeOnline.setAttribute("src", "./assets/icon/Online Event.svg");
+                eventsFillteredImg.appendChild(badgeOnline);
+            }
+
+            // eventsFillteredGr1.appendChild(eventsFillteredImg);
+
+            eventsFillteredText.appendChild(data);
+            eventsFillteredText.appendChild(h4);
+            eventsFillteredText.appendChild(category);
+            eventsFillteredText.appendChild(attendees);
+            eventsFillteredGr1.appendChild(eventsFillteredImg);
+            eventsFillteredGr1.appendChild(eventsFillteredText);
+
+            eventsFilltered.appendChild(eventsFillteredGr1);
+
+        }
+    }
+
+}
+
+render(eventsStore);
