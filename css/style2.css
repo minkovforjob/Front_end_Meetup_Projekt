@@ -26,7 +26,7 @@ body {
     /* height: 100vh; */
     margin-left: 100px;
     margin-right: 100px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 @media screen and (max-width: 1024px) {
@@ -59,7 +59,13 @@ h4 {
     line-height: 24px;
 }
 
+@media screen and (max-width: 768px) {
 
+    h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
 
 @media screen and (max-width: 480px) {
     .title3 {
@@ -73,11 +79,21 @@ h4 {
     }
 }
 
+button,
+a {
+    cursor: pointer;
+}
+
+
+
 /* ******************************************************************************* */
 /* ******************************************************************************* */
 /* ******************************************************************************* */
 
 .navbar {
+    button:hover {
+        box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.15);
+    }
 
     display: flex;
     flex-direction: row;
@@ -86,6 +102,12 @@ h4 {
 
 
     margin: 11px 50px 11px 24px;
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     img {
         width: 94px;
@@ -229,6 +251,11 @@ h4 {
             color: white;
         }
 
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
     }
 
 
@@ -258,9 +285,32 @@ h4 {
 }
 
 /*  Adaptive */
-@media screen and (max-width: 800px) {
-    .navbar .locationField {
-        display: none;
+@media screen and (max-width: 768px) {
+    .navbar {
+        .locationField {
+            display: none;
+        }
+
+        button {
+            font-size: 12px;
+            line-height: 14px;
+
+        }
+
+        .btnCont {
+            gap: 16px;
+
+            .btnSingUp {
+                width: 72px;
+                height: 32px;
+            }
+
+            img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
     }
 }
 
@@ -269,21 +319,40 @@ h4 {
 /* ******************************************************************************* */
 
 .main {
+    margin-top: 78px;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 50px;
+
+
+    min-width: 0;
+    max-width: 100%;
+
     .contFilter {
-        margin-top: 78px;
+
         display: flex;
         flex-direction: column;
         gap: 14px;
+
+        flex: 1 1 0;
+        min-width: 0;
 
         .filters {
             display: flex;
             align-items: flex-start;
             gap: 16px;
-            flex-wrap: wrap;
+
+            width: 100%;
+            min-width: 0;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            /*overflow-y: hidden; */
         }
 
         .filter {
             position: relative;
+            flex-shrink: 0;
         }
 
         .filterButton {
@@ -377,14 +446,25 @@ h4 {
             font-weight: 600;
         }
 
+        .filterDropdown {
+            position: fixed;
+            z-index: 1000;
+        }
 
-
+        .filterDropdown .filterList {
+            display: block;
+            position: static;
+        }
     }
+
+
+
+
 
     /* ******************************************************************************* */
 
     .eventsFilltered {
-        border: 1px solid rgb(120, 50, 143);
+        /* border: 1px solid rgb(120, 50, 143); */
         margin-top: 24px;
 
         display: grid;
@@ -403,6 +483,16 @@ h4 {
             gap: 10px;
         }
 
+        /* оживить картинку */
+        .eventsFillteredGr1 img {
+            transition: transform 0.3s ease;
+        }
+
+        .eventsFillteredGr1:hover img {
+            transform: scale(1.05);
+        }
+
+        /*  */
         .eventsFillteredText {
             display: flex;
             flex-direction: column;
@@ -431,8 +521,6 @@ h4 {
             line-height: 20px;
             color: #707070;
         }
-
-
 
         .attendees {
             font-weight: 400;
@@ -463,13 +551,95 @@ h4 {
 
     }
 
+    .noResults {
+        text-align: center;
+        padding: 30px 16px;
+        color: #2a4746;
+        font-size: 18px;
+    }
+
+    .contMap {
+        /* max-width: 50%; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        flex: 0 1 350px;
+        min-width: 0;
+
+        content {
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            align-items: start;
+        }
+
+        p {
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 20px;
+        }
+
+        h5 {
+            margin-bottom: 16px;
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 28px;
+        }
+
+        iframe {
+            display: block;
+            /* max-width: 350px;
+            max-height: 350px; */
+            border: 0;
+            border-radius: 12px;
+        }
+    }
+
 }
 
-.noResults {
-    text-align: center;
-    padding: 30px 16px;
-    color: #2a4746;
-    font-size: 18px;
+@media screen and (max-width: 1200px) {
+    .main {
+        gap: 0px;
+
+        .contMap {
+            width: 0;
+            height: 0;
+            display: none;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .main {
+        .eventsFilltered {
+            margin-top: 0px;
+
+            .linkImg {
+                margin-bottom: 40px;
+                margin-top: 10px;
+                width: 100px;
+                height: 56px;
+            }
+
+            .data,
+            .category,
+            .attendees {
+                font-size: 10px;
+                line-height: 12px;
+            }
+
+            .eventsFillteredImg {
+                .badgeOnline {
+                    left: 0px;
+                    top: 0px;
+                    width: 100px;
+                    height: 20px;
+                }
+            }
+        }
+    }
 }
 
 /* ******************************************************************************* */
@@ -484,7 +654,7 @@ h4 {
     .footer {
         margin-left: 100px;
         margin-right: 100px;
-        border: 1px solid rgb(239, 243, 32);
+        /* border: 1px solid rgb(239, 243, 32); */
 
         .firstLine {
             padding-bottom: 24px;
@@ -536,7 +706,7 @@ h4 {
         }
 
         .btnCont {
-            border: 1px solid rgb(9, 203, 83);
+            /* border: 1px solid rgb(9, 203, 83); */
             margin-top: 24px;
             /* padding-bottom: 24px; */
             display: flex;

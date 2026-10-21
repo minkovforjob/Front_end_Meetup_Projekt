@@ -26,7 +26,7 @@ body {
     /* height: 100vh; */
     margin-left: 100px;
     margin-right: 100px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 @media screen and (max-width: 1024px) {
@@ -59,7 +59,13 @@ h4 {
     line-height: 24px;
 }
 
+@media screen and (max-width: 768px) {
 
+    h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+}
 
 @media screen and (max-width: 480px) {
     .title3 {
@@ -73,6 +79,16 @@ h4 {
     }
 }
 
+
+button,
+a {
+    cursor: pointer;
+}
+
+button:hover {
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.15);
+}
+
 /* ******************************************************************************* */
 /* ******************************************************************************* */
 /* ******************************************************************************* */
@@ -82,10 +98,17 @@ h4 {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    align-items: center;
     gap: 40px;
 
 
     margin: 11px 50px 11px 24px;
+
+    .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
     img {
         width: 94px;
@@ -150,20 +173,13 @@ h4 {
         /* не сжиматься, не расти, его размеры */
         flex: 0 0 300px;
         width: 300px;
-
     }
 
     .locationField {
         /* не сжиматься, не расти, его размеры */
         flex: 0 0 260px;
         width: 260px;
-
     }
-
-
-
-
-
 
     .searchBar button span {
         font-size: 28px;
@@ -234,6 +250,11 @@ h4 {
             color: white;
         }
 
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
     }
 
 
@@ -263,9 +284,31 @@ h4 {
 }
 
 /*  Adaptive */
-@media screen and (max-width: 800px) {
-    .navbar .locationField {
-        display: none;
+@media screen and (max-width: 768px) {
+    .navbar {
+        .locationField {
+            display: none;
+        }
+
+        button {
+            font-size: 12px;
+            line-height: 14px;
+        }
+
+        .btnCont {
+            gap: 16px;
+
+            .btnSingUp {
+                width: 72px;
+                height: 32px;
+            }
+
+            img {
+                width: 18px;
+                height: 18px;
+            }
+        }
+
     }
 }
 
@@ -274,7 +317,7 @@ h4 {
 /* ******************************************************************************* */
 
 .sectionPeoplePlatform {
-    border: 1px solid rgb(61, 121, 54);
+    /* border: 1px solid rgb(61, 121, 54); */
     padding-bottom: 95px;
     padding-top: 95px;
     display: flex;
@@ -408,7 +451,7 @@ h4 {
     }
 
     .eventsNear {
-        border: 1px solid rgb(120, 50, 143);
+        /* border: 1px solid rgb(120, 50, 143); */
         margin-top: 24px;
 
 
@@ -430,6 +473,17 @@ h4 {
             gap: 10px;
 
         }
+
+        /* Оживить карточку */
+        .eventsNearGr1 img {
+            transition: transform 0.3s ease;
+        }
+
+        .eventsNearGr1:hover img {
+            transform: scale(1.05);
+        }
+
+        /*  */
 
         .eventsNearText {
             display: flex;
@@ -497,7 +551,7 @@ h4 {
         }
 
         .eventsNear {
-            border: 1px solid rgb(120, 50, 143);
+            /* border: 1px solid rgb(120, 50, 143); */
             margin-top: 24px;
 
             display: grid;
@@ -628,7 +682,7 @@ h4 {
 
 
     .upcomingOnlineEvents {
-        border: 1px solid rgb(120, 50, 143);
+        /* border: 1px solid rgb(120, 50, 143); */
         margin-top: 24px;
 
 
@@ -651,6 +705,16 @@ h4 {
 
         }
 
+        /* оживить карточку */
+        .upcomingOnlineEventsGr1 img {
+            transition: transform 0.3s ease;
+        }
+
+        .upcomingOnlineEventsGr1:hover img {
+            transform: scale(1.05);
+        }
+
+        /*  */
         .upcomingOnlineEventsText {
             display: flex;
             flex-direction: column;
@@ -715,7 +779,7 @@ h4 {
 
 
         .upcomingOnlineEvents {
-            border: 1px solid rgb(120, 50, 143);
+            /* border: 1px solid rgb(120, 50, 143); */
             margin-top: 24px;
 
             display: grid;
@@ -815,7 +879,7 @@ h4 {
 
 .sectionJoinMeetup {
     background-color: #F7FBFB;
-    border: 1px solid rgb(61, 121, 54);
+    /* border: 1px solid rgb(61, 121, 54); */
 
 
     display: grid;
@@ -956,7 +1020,7 @@ h4 {
     margin-top: 64px;
 
     .topCategories {
-        border: 1px solid rgb(120, 50, 143);
+        /* border: 1px solid rgb(120, 50, 143); */
         margin-top: 24px;
 
         display: grid;
@@ -980,8 +1044,17 @@ h4 {
             justify-content: start;
             align-items: center;
             gap: 6px;
+            border: 1px solid transparent;
 
+            transition: border-color 0.3s ease;
         }
+
+
+
+        .TopCategoriesGr1:hover {
+            border-color: #00a5a5;
+        }
+
 
         img {
             width: 20px;
@@ -1018,7 +1091,7 @@ h4 {
     }
 
     .popularCities {
-        border: 1px solid rgb(15, 215, 88);
+        /* border: 1px solid rgb(15, 215, 88); */
         margin-top: 28px;
 
         display: grid;
@@ -1051,8 +1124,22 @@ h4 {
                 line-height: 28px;
                 text-align: center;
             }
+
+
+
+
         }
 
+        /* оживить картинку */
+        .popularCitiesGr1 img {
+            transition: transform 0.3s ease;
+        }
+
+        .popularCitiesGr1:hover img {
+            transform: scale(1.05);
+        }
+
+        /*  */
 
     }
 }
@@ -1115,7 +1202,7 @@ h4 {
     margin-top: 64px;
 
     .howMeetup {
-        border: 1px solid rgb(15, 215, 88);
+        /* border: 1px solid rgb(15, 215, 88); */
         margin-top: 28px;
 
         display: flex;
@@ -1235,7 +1322,7 @@ h4 {
     }
 
     .friendships {
-        border: 1px solid rgb(222, 36, 173);
+        /* border: 1px solid rgb(222, 36, 173); */
         margin-top: 28px;
 
         display: grid;
@@ -1259,6 +1346,16 @@ h4 {
             gap: 16px;
         }
 
+        /* оживить карточку */
+        .friendshipsGr1 img {
+            transition: transform 0.3s ease;
+        }
+
+        .friendshipsGr1:hover img {
+            transform: scale(1.05);
+        }
+
+        /*  */
         img {
             width: 376px;
             height: auto;
@@ -1357,7 +1454,7 @@ h4 {
     .footer {
         margin-left: 100px;
         margin-right: 100px;
-        border: 1px solid rgb(239, 243, 32);
+        /* border: 1px solid rgb(239, 243, 32); */
 
         .firstLine {
             padding-bottom: 24px;
@@ -1409,7 +1506,7 @@ h4 {
         }
 
         .btnCont {
-            border: 1px solid rgb(9, 203, 83);
+            /* border: 1px solid rgb(9, 203, 83); */
             margin-top: 24px;
             /* padding-bottom: 24px; */
             display: flex;

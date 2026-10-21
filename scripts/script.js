@@ -70,64 +70,92 @@ const eventsStore = [
 // ******************************************************************************************
 // ******************************************************************************************
 // ******************************************************************************************
+// массив всех установленных критериев  фильтров
 const filtrCriterions = {
     category: "",
     type: "",
     distance: "",
 }
+
+
 const noResults = document.querySelector(".noResults");
 console.log(noResults);
 const eventsFilltered = document.querySelector(".eventsFilltered");
 const filterButtons = document.querySelectorAll(".filterButton");
 const filterLists = document.querySelectorAll(".filterList");
+const dropdown = document.querySelector(".filterDropdown");
+
+// Меню для выбора фильтров
 filterButtons.forEach(button => {
+    const list = button.nextElementSibling;
+    button._filterList = list;
+    list._originalFilter = button.closest(".filter");
+
     button.addEventListener("click", () => {
-        const list = button.nextElementSibling;
+        const list = button._filterList;
         const isOpen = list.classList.contains("open");
 
-        // Закрываем все списки
+        // Закрываем предыдущее меню и возвращаем его на место
         filterLists.forEach(item => {
             item.classList.remove("open");
+
+            const originalFilter = item._originalFilter;
+            if (originalFilter) {
+                originalFilter.appendChild(item);
+            }
         });
 
-        // Открываем текущий, если он был закрыт
+        dropdown.replaceChildren();
+
         if (!isOpen) {
+            // Запоминаем исходный родитель
+            list._originalFilter = button.closest(".filter");
+            dropdown.appendChild(list);
+
+            const rect = button.getBoundingClientRect();
+
+            dropdown.appendChild(list);
             list.classList.add("open");
+
+            dropdown.style.left = `${rect.left}px`;
+            dropdown.style.top = `${rect.bottom + 8}px`;
         }
     });
 });
 
 // Выбор значения
 document.querySelectorAll(".filterList input").forEach(input => {
-    input.addEventListener("change", (event) => {
+    input.addEventListener("change", () => {
 
         const filterKey = input.name;//поймали key - для процедуры фильтрации
         const filterValue = input.value;// поймали value - для процедуры фильтрации
         // console.log(input.name + "  " + input.value);
 
         filtrCriterions[filterKey] = filterValue;
-        console.log(filtrCriterions);
+        // console.log(filtrCriterions);
         filterEvents();
 
         //ищем ближайший элемент с указанным селектором, начиная с самого элемента 
         // и поднимаясь вверх по HTML-структуре
         const list = input.closest(".filterList");
-        const filter = input.closest(".filter");
+        const filter = list._originalFilter;
 
         //ищем подходящий элемент внутри указанного элемента, 
         // спускаясь по его потомкам
         const buttonText = filter.querySelector(".filterButtonText");
-        // console.log(buttonText0);
+
         // Получаем выбранный текст
         const label = input.closest("label");
         const selectedText = label.textContent.trim();
 
         // Показываем выбранное значение на кнопке
-        if (selectedText !== "All") { buttonText.textContent = selectedText; } else { buttonText.textContent = filterKey[0].toUpperCase() + filterKey.slice(1).toLowerCase() }
+        if (selectedText !== "All") { buttonText.textContent = selectedText; }
+        else { buttonText.textContent = filterKey[0].toUpperCase() + filterKey.slice(1).toLowerCase() }
 
         // Закрываем список после выбора
         list.classList.remove("open");
-
+        filter.appendChild(list);
+        dropdown.replaceChildren();
 
     });
 });
@@ -135,7 +163,7 @@ document.querySelectorAll(".filterList input").forEach(input => {
 // ******************************************************************************************
 // ********************************         FILTER ARR          **********************************************************
 
-// v_field = "category", v_value = "Health and Wellbeing"
+// функция фильтрации : eventsStore -->  filtredArr
 function filterEvents() {
     // console.log("filterEvents");
     console.log(eventsStore);
@@ -150,44 +178,17 @@ function filterEvents() {
             if (flag1 && flag2 && flag3) { return el; }
         })
         console.log(filtredArr);
-        render(filtredArr);
-
+        render(filtredArr); // отправляем отфильтрованный массив для прорисовки на экране
     }
     else {
-        render(eventsStore);
+        render(eventsStore); // отправляем нефильтрованный массив для прорисовки на экране
     }
-
-
 }
 filterEvents();
-// filterEvents("category", "Health and Wellbeing");
 
 
 
-/* <div class="eventsFillteredGr1">
-    <div class="eventsFillteredImg"> <img class="linkImg" src="./assets/img/Link1.png" alt=""></div>
-    <div class="eventsFillteredText">
-        <p class="data">Mon, Mar 18 · 7:00 PM PDT</p>
-        <h4>Day Trading Idea and Strategy</h4>
-        <p class="category">Business (5 km)</p>
-        <p class="attendees">1 going</p>
-    </div>
-</div>
-    **************************************
-const eventsStore = [{
-    title: "All Nations - Manhattan Missions Church Bible Study",
-    description: "Manhattan Bible Study Meetup Group",
-    date: new Date(2024, 2, 14, 11),
-    image:
-        "https://plus.unsplash.com/premium_photo-1679488248784-65a638a3d3fc?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    type: "offline",
-    category: "Health and Wellbeing",
-    distance: 15,
-},
-]
-    ************************************************* */
-
-
+// *****            Рисуем результат на экране
 
 function render(arr) {
     eventsFilltered.replaceChildren();
@@ -259,4 +260,4 @@ function render(arr) {
 
 }
 
-render(eventsStore);
+// render(eventsStore);
