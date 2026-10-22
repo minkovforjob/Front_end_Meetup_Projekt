@@ -546,8 +546,8 @@ a {
 
             .badgeOnline {
                 position: absolute;
-                left: 0px;
-                top: 16px;
+                left: 5px;
+                top: 20px;
 
                 width: 106px;
                 height: 20px;
@@ -556,6 +556,25 @@ a {
                 background-repeat: no-repeat;
                 background-position: center;
                 background-size: contain;
+            }
+        }
+
+        .mobBadgeOnline {
+            display: none;
+
+            .iconmobBadge {
+                width: 10px;
+                height: 10px;
+                background-image: url("../assets/icon/mobOnline.svg");
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+
+            .textBadge {
+                font-size: 8px;
+                line-height: 10px;
+                color: #707070;
             }
         }
 
@@ -644,11 +663,15 @@ a {
 
             .eventsFillteredImg {
                 .badgeOnline {
-                    left: 0px;
-                    top: 0px;
-                    width: 100px;
-                    height: 20px;
+                    display: none;
                 }
+            }
+
+            .mobBadgeOnline {
+                display: flex;
+                justify-content: start;
+                align-items: center;
+
             }
         }
     }

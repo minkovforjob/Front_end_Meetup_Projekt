@@ -273,22 +273,41 @@ function render(arr) {
             attendees.setAttribute("class", "attendees");
             attendees.textContent = (el.attendees || 0) + " attendees";
 
-
-
             eventsFillteredImg.appendChild(linkImg);
-            if (el.type === "online") {
-                const badgeOnline = document.createElement("img")
-                badgeOnline.setAttribute("class", "badgeOnline");
-                // badgeOnline.setAttribute("src", "./assets/icon/Online Event.svg");
-                eventsFillteredImg.appendChild(badgeOnline);
-            }
 
-            // eventsFillteredGr1.appendChild(eventsFillteredImg);
 
             eventsFillteredText.appendChild(data);
             eventsFillteredText.appendChild(h4);
             eventsFillteredText.appendChild(category);
             eventsFillteredText.appendChild(attendees);
+
+            if (el.type === "online") {
+                const badgeOnline = document.createElement("img");
+                badgeOnline.setAttribute("class", "badgeOnline");
+                // badgeOnline.setAttribute("src", "./assets/icon/Online Event.svg");
+                eventsFillteredImg.appendChild(badgeOnline);
+
+                const mobBadgeOnline = document.createElement("div");
+                mobBadgeOnline.setAttribute("class", "mobBadgeOnline");
+                const iconmobBadge = document.createElement("img");
+                iconmobBadge.setAttribute("class", "iconmobBadge");
+
+                const textBadge = document.createElement("span");
+                textBadge.setAttribute("class", "textBadge");
+                textBadge.textContent = "Online Event";
+
+                mobBadgeOnline.appendChild(iconmobBadge);
+                mobBadgeOnline.appendChild(textBadge);
+
+                eventsFillteredText.appendChild(mobBadgeOnline);
+            }
+
+            // eventsFillteredGr1.appendChild(eventsFillteredImg);
+
+
+
+
+
             eventsFillteredGr1.appendChild(eventsFillteredImg);
             eventsFillteredGr1.appendChild(eventsFillteredText);
 
