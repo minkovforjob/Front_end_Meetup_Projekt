@@ -344,7 +344,7 @@ a {
         .filters {
             display: flex;
             align-items: flex-start;
-            gap: 16px;
+            gap: 10px;
 
             width: 100%;
             min-width: 0;
@@ -377,7 +377,11 @@ a {
         }
 
         .filterButtonСategory {
-            width: 210px;
+            width: 200px;
+        }
+
+        .filterButtonData {
+            width: 170px;
         }
 
         .filterButton:hover {
@@ -406,7 +410,11 @@ a {
         }
 
         .filterListСategory {
-            width: 210px;
+            width: 200px;
+        }
+
+        .filterListData {
+            width: 170px;
         }
 
         .filterList.open {
@@ -484,7 +492,7 @@ a {
             display: flex;
             flex-direction: row;
             gap: 10px;
-            max-width: 600px;
+            max-width: 640px;
         }
 
         /* оживить картинку */

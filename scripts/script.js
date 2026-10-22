@@ -79,16 +79,55 @@ const filtrCriterions = {
 
 
 const noResults = document.querySelector(".noResults");
-console.log(noResults);
+// console.log(noResults);
 const eventsFilltered = document.querySelector(".eventsFilltered");
 const filterButtons = document.querySelectorAll(".filterButton");
 const filterLists = document.querySelectorAll(".filterList");
 const dropdown = document.querySelector(".filterDropdown");
 
+
+// функция закрытия меню
+function closeDropdown() {
+    const openList = dropdown.querySelector(".filterList.open");
+
+    if (openList) {
+        openList.classList.remove("open");
+
+        // Возвращаем открытое меню фильтра в его исходный родительский элемент
+        openList._originalFilter.appendChild(openList);
+    }
+
+    dropdown.replaceChildren();
+}
+
+//Закрытие при щелчке вне меню
+document.addEventListener("click", (event) => {
+    const clickOnFilterButton = event.target.closest(".filterButton");
+    const clickInsideDropdown = dropdown.contains(event.target);
+
+    if (!clickOnFilterButton && !clickInsideDropdown) {
+        closeDropdown();
+    }
+});
+
+// Закрытие при прокрутке страницы
+window.addEventListener("scroll", closeDropdown, true);
+
+// закрываем при повторном выборе того же пункта
+dropdown.addEventListener("click", (event) => {
+    if (event.target.closest(".filterList label")) {
+        closeDropdown();
+        // setTimeout(closeDropdown, 0);
+    }
+});
+
 // Меню для выбора фильтров
 filterButtons.forEach(button => {
+    // следующий HTML-элемент, который находится на том же уровне, сразу после button - подменю
     const list = button.nextElementSibling;
+    //сохраняет ссылку на список фильтра внутри самой кнопки
     button._filterList = list;
+    //сохраняем ссылку на родительский элемент списка
     list._originalFilter = button.closest(".filter");
 
     button.addEventListener("click", () => {
@@ -111,7 +150,7 @@ filterButtons.forEach(button => {
             // Запоминаем исходный родитель
             list._originalFilter = button.closest(".filter");
             dropdown.appendChild(list);
-
+            //сохраняем информацию о размере и положении элемента button
             const rect = button.getBoundingClientRect();
 
             dropdown.appendChild(list);
@@ -166,8 +205,8 @@ document.querySelectorAll(".filterList input").forEach(input => {
 // функция фильтрации : eventsStore -->  filtredArr
 function filterEvents() {
     // console.log("filterEvents");
-    console.log(eventsStore);
-    console.log(filtrCriterions);
+    // console.log(eventsStore);
+    // console.log(filtrCriterions);
     if ((filtrCriterions.category !== "") || (filtrCriterions.type !== "") || (filtrCriterions.distance !== "")) {
         const filtredArr = eventsStore.filter((el) => {
             let flag1 = false; let flag2 = false; let flag3 = false;
@@ -192,7 +231,7 @@ filterEvents();
 
 function render(arr) {
     eventsFilltered.replaceChildren();
-    console.log("arr.length = " + arr.length);
+    // console.log("arr.length = " + arr.length);
 
     if (arr.length === 0) {
 
@@ -204,7 +243,7 @@ function render(arr) {
             // console.log(el.image);
             const eventsFillteredGr1 = document.createElement("div");
             eventsFillteredGr1.setAttribute("class", "eventsFillteredGr1");
-            // event.dataset.id = el. ???????????????????
+
 
             const eventsFillteredImg = document.createElement("div");
             eventsFillteredImg.setAttribute("class", "eventsFillteredImg");
