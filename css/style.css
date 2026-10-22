@@ -120,7 +120,7 @@ button:hover {
         align-items: center;
         /* width: 100%; */
         /* max-width: 700px; */
-        height: 42px;
+        /* height: 42px; */
         border: 1px solid #ddd;
         border-radius: 12px;
         overflow: hidden;
@@ -173,6 +173,7 @@ button:hover {
         /* не сжиматься, не расти, его размеры */
         flex: 0 0 300px;
         width: 300px;
+
     }
 
     .locationField {
@@ -192,6 +193,7 @@ button:hover {
         flex: 1;
         min-width: 0;
         border-right: 1px solid #ddd;
+        height: 42px;
     }
 
     .searchIcon {
@@ -1541,7 +1543,7 @@ button:hover {
 
         .lastLine {
             margin-top: 24px;
-            margin-bottom: 40px;
+            padding-bottom: 40px;
             display: flex;
             gap: 24px;
 
@@ -1557,13 +1559,9 @@ button:hover {
 
 @media screen and (max-width: 1024px) {
     .footer0 {
-
-
         .footer {
             margin-left: 15px;
             margin-right: 15px;
-
-
 
             .lastLine {
                 .sub {
@@ -1576,22 +1574,12 @@ button:hover {
 
 @media screen and (max-width: 768px) {
     .footer0 {
-
         .footer {
-
-
             .btnCont {
-
-
-
                 .contStore {
                     display: none;
                 }
-
-
             }
-
-
         }
     }
 }
